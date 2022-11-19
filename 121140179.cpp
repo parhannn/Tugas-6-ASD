@@ -52,16 +52,22 @@ addressNode Allocation(infotype x)
     return NewNode;
 }
 
-//pengecekan pohon biner apakah kosong atau tidak
+//pengecekkan pohon biner apakah kosong atau tidak
 bool IsTreeEmpty(BinTree T)
 {
     return (T == Nil);
 }
 
+//pengecekkan apakah akar kosong atau tidak
+bool IsRootEmpty(BinTree TRoot)
+{
+    return (root == Nil);
+}
+
 //membuat Tree baru dengan infotype x sebagai parent
 void CreateRoot(infotype x)
 {
-    if(root != Nil)
+    if(!IsRootEmpty(root))
     {
         cout << "\nTree is already created!" << endl;
     }
