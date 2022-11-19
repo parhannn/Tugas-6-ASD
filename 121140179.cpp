@@ -69,7 +69,7 @@ void CreateRoot(infotype x)
 //memasukkan data di sebelah kiri parent
 addressNode InsertLeft(addressNode NodeParent, infotype x)
 {
-    if(NodeParent->left!=NULL)
+    if(NodeParent->left != Nil)
     {
         cout << "\nParent Node with value " << NodeParent->info << " already has child" << endl;
 
@@ -82,7 +82,7 @@ addressNode InsertLeft(addressNode NodeParent, infotype x)
         NewNode = Allocation(x);
         NodeParent->left = NewNode;
         NewNode->parent = NodeParent;
-        cout<<"InsertLeft " << x << " is succssesful on parent : " << NodeParent->info << endl;
+        cout << "InsertLeft " << x << " is succssesful on parent : " << NodeParent->info << endl;
 
         return NewNode;
     }
@@ -91,7 +91,7 @@ addressNode InsertLeft(addressNode NodeParent, infotype x)
 //memasukkan data di sebelah kanan parent
 addressNode InsertRight(addressNode NodeParent, infotype x)
 {
-    if(NodeParent->right!=NULL)
+    if(NodeParent->right != Nil)
     {
         cout << "\nParent Node with value " << NodeParent->info << " already has child" << endl;
 
@@ -104,14 +104,14 @@ addressNode InsertRight(addressNode NodeParent, infotype x)
         NewNode = Allocation(x);
         NodeParent->right = NewNode;
         NewNode->parent = NodeParent;
-        cout<<"InsertRight " << x << " is succssesful on parent : " << NodeParent->info << endl;
+        cout << "InsertRight " << x << " is succssesful on parent : " << NodeParent->info << endl;
 
         return NewNode;
     }    
 }
 
 //memasukkan data ke dalam pohon
-addressNode InsertElmt(addressNode NodeParent, infotype x)
+addressNode InsertElmt(BinTree NodeParent, infotype x)
 {
     if(x >= NodeParent->info)//jika data lebih besar atau sama dengan data akar maka jalankan InsertRight
     {
@@ -123,14 +123,14 @@ addressNode InsertElmt(addressNode NodeParent, infotype x)
     }
 }
 
-void preOrder(addressNode T)
+void preOrder(BinTree T)
 {
     if (T == Nil){
         return;
     }
     else
     {
-        cout << T->info <<" ";
+        cout << Root(T) <<" ";
         preOrder(Left(T));
         preOrder(Right(T));
     }
@@ -149,7 +149,7 @@ void preOrder(addressNode T)
 
 int main()
 {
-    BinTree node2,node3,node4,node5,node6;
+    BinTree node2,node3,node4,node5,node6;//deklarasi tiap tiap node/element
 
     //pohon
     CreateRoot(8);//akar utama (tingkat paling atas)
