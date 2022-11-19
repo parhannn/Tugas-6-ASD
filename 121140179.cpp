@@ -52,6 +52,12 @@ addressNode Allocation(infotype x)
     return NewNode;
 }
 
+//pengecekan pohon biner apakah kosong atau tidak
+bool IsTreeEmpty(BinTree T)
+{
+    return (T == Nil);
+}
+
 //membuat Tree baru dengan infotype x sebagai parent
 void CreateRoot(infotype x)
 {
@@ -125,7 +131,7 @@ addressNode InsertElmt(BinTree NodeParent, infotype x)
 
 void preOrder(BinTree T)
 {
-    if (T == Nil){
+    if (IsTreeEmpty(T)){
         return;
     }
     else
